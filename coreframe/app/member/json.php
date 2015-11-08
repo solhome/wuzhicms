@@ -68,7 +68,12 @@ class json{
         }
         $dir = substr(md5($uid), 0, 2).'/'.$uid.'/';
         $avatar = ATTACHMENT_URL.'member/'.$dir."180x180.jpg";
-        echo json_encode($avatar);
+		if(file_exists($file)){
+			echo json_encode($avatar);
+		}else{
+			echo json_encode(WEBURL."res/images/userface.png");
+		}
+        
     }
 
 }
