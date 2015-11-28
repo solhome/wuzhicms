@@ -288,3 +288,24 @@ function imagesize($url,$return_type = 1) {
         return $size[3];
     }
 }
+/**
+*获取文章栏目名称
+*/
+function catname($cid, $symbol=' &gt; ', $target = ''){
+    static $categorys;
+    if(empty($categorys)) {
+        $categorys = get_cache('category','content');
+    }
+    echo '<a href="'.$categorys[$cid]['url'].'" '.$target.'>'.$categorys[$cid]['name'].'</a>';
+}
+/**
+*获取栏目模型名称
+*/
+function get_cat_model($cid) {
+    $categorys = get_cache('category','content');
+    if(!isset($categorys[$cid])) return '0';
+    $modelid = $categorys[$cid]['modelid'];
+    $models = get_cache('model_content','model');
+    $name = $models[$modelid]['name'];
+    return $name;
+}
