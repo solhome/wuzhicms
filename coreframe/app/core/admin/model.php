@@ -116,8 +116,6 @@ class model extends WUZHI_admin {
             load_class('form');
             load_function('template');
             $r = $this->db->get_one('model',array('modelid'=>$modelid));
-            $template_set = unserialize($r['template_set']);
-            $r['template'] = $template_set[$siteid];
             include $this->template('model_edit');
         }
     }
