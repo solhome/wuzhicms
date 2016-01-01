@@ -80,12 +80,13 @@ class index{
         foreach($data as $_key=>$_value) {
             $$_key = $_value['data'];
         }
+        $model_s = $models[$data['modelid']];
         if($template) {
             $_template = $template;
         } elseif($category['show_template']) {
             $_template = $category['show_template'];
-        } elseif($model_r['template']) {
-            $_template = TPLID.':'.$model_r['template'];
+        } elseif($model_s['template']) {
+            $_template = $model_s['template'];
         } else {
             $_template = TPLID.':show';
         }
