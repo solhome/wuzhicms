@@ -41,7 +41,7 @@ class index{
             $this->db->insert('promote_stat_'.$month, $formdata);
             header("Location:".$r['url']);
         } else {
-            header("Location:http://www.wuzhicms.com");
+            header("Location:".WEBURL);
         }
     }
 }
