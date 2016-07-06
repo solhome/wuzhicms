@@ -56,8 +56,8 @@ include $this->template('header','core');
             </div>
             <div class="form-group" id="url_div">
                 <label class="col-sm-2 col-xs-4 control-label">链接地址</label>
-                <div class="col-lg-3 col-sm-6 col-xs-6 input-group">
-                    <div class="input-group"><?php echo $form->attachment('gif|jpg|png|mp4|3gp|mp3|apk','1','form[url]','');?></div>
+                <div class="col-lg-3 col-sm-4 col-xs-4 input-group">
+                    <input type="text" class="form-control" name="form[subtitle]">
                 </div>
             </div>
 
