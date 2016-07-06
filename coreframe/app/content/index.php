@@ -142,12 +142,13 @@ class index{
             }
         }*/
         //end 权限检查
+        $model_s = $models[$modelid];
         if($template) {
             $_template = $template;
         } elseif($category['show_template']) {
             $_template = $category['show_template'];
-        } elseif($model_r['template']) {
-            $_template = TPLID.':'.$model_r['template'];
+        } elseif($model_s['template']) {
+            $_template = TPLID.':'.$model_s['template'];
         } else {
             $_template = TPLID.':show';
         }
